@@ -1,0 +1,87 @@
+.land {
+    height: 91vh;
+    background-color: white;
+
+    .declare {
+        display: flex;
+        height: 100%;
+
+        .who {
+            position: relative;
+            bottom: 4.5%;
+            flex: 6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.6em;
+            font-weight: bold;
+            color: #262626;
+
+            .hello {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            span {
+                color: #90967c;
+                font-weight: bolder;
+                text-shadow: 1px 1px #5e6250;
+            }
+
+            .cv {
+                text-decoration: none;
+                font-size: 0.5em;
+                border: 1px solid #262626;
+                border-radius: 10px;
+                color: #262626;
+                padding: 11px;
+            }
+
+            .cv:hover {
+                background-color: #90967c;
+                color: white;
+            }
+
+            .links {
+                display: flex;
+                gap: 25px;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    filter: invert(65%) sepia(6%) saturate(935%) hue-rotate(33deg) brightness(89%);
+                }
+
+                img:hover {
+                    width: 36px;
+                    height: 36px;
+                    filter: invert(15%) sepia(4%) saturate(4962%) hue-rotate(33deg) brightness(89%);
+                }
+            }
+        }
+
+        .avatar {
+            flex: 6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 500px;
+                height: 500px;
+                transition: 0.5s;
+            }
+
+            img:hover {
+                width: 550px;
+                height: 550px;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}
