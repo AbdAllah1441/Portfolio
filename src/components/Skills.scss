@@ -1,0 +1,84 @@
+.skills_container {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90dvh;
+
+    h1 {
+        font-weight: 600;
+        font-size: 3.5em;
+        margin-top: 40px ;
+        justify-self: flex-start;
+        color: #042a20;
+    }
+
+    .content {
+
+        .skills {
+            
+            display: flex;
+            padding: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            
+            .skill {
+                box-shadow: 0.1px 0.1px 8px  #455350;
+                display: flex;
+                gap: 10px;
+                font-size: 1.5em;
+                padding: 15px;
+                align-items: center;
+                position: relative;
+                border-radius: 10px;
+                color: #003d2d;
+                width: 600px;
+                background-color: #f1eded;
+                
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                }
+                
+                .bar1, .bar2 {
+                    border-radius: 25px;
+                    position: absolute;
+                    height: 4px;
+                    width: calc(100% - 30px);
+                    background-color: #003d2d;
+                    bottom: 9px;
+                }
+                
+                .bar2 {
+                    background-color: #b6bcb4fd;
+                }
+                
+                .bar1 {
+                    z-index: 5;
+                }
+
+                &.four {
+                    .bar1 {
+                        width: calc(0.8 * (100% - 30px));
+                    }
+                }
+                &.four_p {
+                    .bar1 {
+                        width: calc(0.9 * (100% - 30px));
+                    }
+                }
+                &.three {
+                    .bar1 {
+                        width: calc(0.6 * (100% - 30px));
+                    }
+                }
+                &.three_p {
+                    .bar1 {
+                        width: calc(0.7 * (100% - 30px));
+                    }
+                }
+            }
+        }
+    }
+}

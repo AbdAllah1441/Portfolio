@@ -1,6 +1,7 @@
 .land {
-    height: 91vh;
+    height: 90dvh;
     background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     .declare {
         display: flex;
@@ -15,7 +16,7 @@
             align-items: center;
             font-size: 2.6em;
             font-weight: bold;
-            color: #262626;
+            color: #042a20;;
 
             .hello {
                 display: flex;
@@ -70,6 +71,7 @@
             align-items: center;
 
             img {
+                margin-bottom: 40px;
                 width: 500px;
                 height: 500px;
                 transition: 0.5s;

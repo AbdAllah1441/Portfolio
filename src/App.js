@@ -8,7 +8,7 @@ import Skills from './components/Skills';
 
 function App() {
     return (
-        <>
+        <div>
             <Router>
                 <Nav />
                 <Routes>
@@ -18,7 +18,7 @@ function App() {
                     <Route path="/skills" element={<Skills />}></Route>
                 </Routes>
             </Router>
-        </>
+        </div>
     );
 }
 

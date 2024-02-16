@@ -1,0 +1,76 @@
+.contact {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90dvh;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        
+        h1 {
+            align-self: center;
+            font-weight: 600;
+            font-size: 3.5em;
+            margin: 40px 0 20px 0;
+            color: #042a20;
+        }
+
+        .in_title {
+            color: #042a20;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .in_container {
+            display: flex;
+            gap: 40px;
+
+    
+            .in {
+                font-size: 1.1rem;
+                width: 400px;
+                border-radius: 10px;
+                padding: 15px;
+                background-color: #fbfafa;
+                outline: none;
+                border: none;
+                box-shadow: 0.1px 0.1px 5px  #455350;
+            }
+        }
+
+
+        textarea {
+            box-shadow: 0.1px 0.1px 5px  #455350;
+            font-size: 1.1rem;
+            width: 840px;
+            min-height: 200px;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #f1eded;
+            outline: none;
+            border: none;
+            resize: none;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
+        }
+
+        .btn {
+            box-shadow: 0.1px 0.1px 5px  #455350;
+            padding: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background-color: #042a20;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            width: 200px;
+            cursor: pointer;
+        }
+    }
+}
