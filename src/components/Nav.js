@@ -25,10 +25,10 @@ const Nav = () => {
 
     return (
         <div className='nav' >
-            <Link to="/Portfolio" className={homeSelect ? "logo selected-logo" : "logo"} 
+            <Link to="/Portfolio/" className={homeSelect ? "logo selected-logo" : "logo"} 
             onClick={() => handleSelect("home")}><img src={code} alt='aa' /></Link>
             <div className='sections'>
-                <Link className={`section ${homeSelect ? "selected" : ""}`} to="/Portfolio" 
+                <Link className={`section ${homeSelect ? "selected" : ""}`} to="/Portfolio/" 
                 onClick={() => handleSelect("home")}>Home</Link>
                 <Link className={`section ${skillsSelect ? "selected" : ""}`} to="/skills" 
                 onClick={() => handleSelect("skills")}>Skills</Link>

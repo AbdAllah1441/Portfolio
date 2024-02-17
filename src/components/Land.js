@@ -4,6 +4,7 @@ import "./Land.scss"
 import github from "../images/github.svg"
 import linkedin from "../images/icons8-linkedin-circled.svg"
 import gmail from "../images/gmail-svgrepo-com.svg"
+import resume from "../images/Resume.pdf";
 
 const Land = () => {
     const socials = [
@@ -34,7 +35,7 @@ const Land = () => {
                                 target="_blank" rel="noreferrer">
                                 <img src={e.icon} alt='ggg' /></a>)}
                         </div>
-                        <a className='cv' href='http://localhost:3000/Resume.pdf' download>Download CV</a>
+                        <a className='cv' href={resume} download>Download CV</a>
                     </div>
                 </div>
                 <div className='avatar'>
