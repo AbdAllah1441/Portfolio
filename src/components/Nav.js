@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import code from "../images/code-solid.svg";
 
 const Nav = () => {
-    const [homeSelect, setHomeSelect] = useState(false);
+    const [homeSelect, setHomeSelect] = useState(true);
     const [projectsSelect, setProjectsSelect] = useState(false);
     const [contactSelect, setContactSelect] = useState(false);
     const [skillsSelect, setSkillsSelect] = useState(false);
