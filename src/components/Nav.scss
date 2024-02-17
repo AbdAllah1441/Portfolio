@@ -3,7 +3,7 @@
     width: 100%;
     height: 10vh;
     background-color: white;
-    color: #442d20;
+    color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,7 @@
         font-size: 1.3em;
 
         img {
-            filter: invert(7%) sepia(26%) saturate(20%) hue-rotate(321deg) brightness(105%);
+            filter: invert(12%) sepia(15%) saturate(2339%) hue-rotate(114deg) brightness(97%);
             width: 50px;
             height: 50px;
         }
@@ -45,7 +45,7 @@
             align-items: center;
             height: 6.5vh;
             text-decoration: none;
-            color: #262626;
+            color: #042a20;
         }
 
         .section:hover {

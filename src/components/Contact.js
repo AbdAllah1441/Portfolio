@@ -10,19 +10,36 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-    
-        emailjs
-            .sendForm('service_om8ve0i', 'template_06ijj49', form.current, {
-            publicKey: 'qb97N_y1_K_w9UJt0',
-            })
-            .then(
-            () => {
-                console.log('SUCCESS!');
-            },
-            (error) => {
-                console.log('FAILED...', error.text);
-            },
-        );
+
+        if (message !== "" && name !== "" && email !== "" && email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) !== null) {
+            emailjs
+                .sendForm('service_om8ve0i', 'template_06ijj49', form.current, {
+                publicKey: 'qb97N_y1_K_w9UJt0',
+                })
+                .then(
+                () => {
+                    alert('Your message is sent successfully !');
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                },
+                (error) => {
+                    alert('FAILED...', error.text);
+                },
+            );
+        }
+        else if (name === "") {
+            alert("Enter your name.");
+        }
+        else if (email === "") {
+            alert("Enter your email.");
+        }
+        else if (email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) === null) {
+            alert("Enter a valid email.");
+        }
+        else if (message === "") {
+            alert("Enter your message.");
+        }
     };
 
     return (
