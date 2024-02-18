@@ -20,6 +20,7 @@
         }
 
         .in_title {
+            font-weight: 600;
             color: #042a20;
             font-size: 1.8em;
             margin-bottom: 10px;
@@ -31,7 +32,7 @@
 
     
             .in {
-                font-size: 1.1rem;
+                font-size: 1.1em;
                 width: 40vw;
                 border-radius: 10px;
                 padding: 15px;
@@ -71,6 +72,37 @@
             color: white;
             width: 200px;
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .contact{
+
+        form{
+
+            h1{
+                font-size: 2.1em;
+            }
+
+            .in_title{
+                font-size: 1.2em;
+            }
+
+            .in_container{
+
+                .in{
+                    font-size: 0.8rem;
+                }
+            }
+
+            textarea{
+                font-size: 0.9rem;
+            }
+
+            .btn{
+                font-size: 1em;
+            }
         }
     }
 }
