@@ -52,3 +52,19 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+
+    .projects_container {
+        
+        .content {
+
+            .projects {
+                
+                .project {
+                    width: 60dvw;
+                }
+            }
+        }
+    }
+}

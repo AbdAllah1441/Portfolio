@@ -1,9 +1,8 @@
 .nav {
     position: relative;
-    width: 100%;
+    width: 100dvw;
     height: 10vh;
     background-color: white;
-    color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +14,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-        margin-left: 10%;
+        margin-left: 5%;
         color: #b98357;
         font-weight: bolder;
         text-shadow: 1px 1px #8c6d57;
@@ -34,7 +33,7 @@
     }
 
     .sections {
-        margin-right: 10%;
+        margin-right: 5%;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -43,9 +42,15 @@
         .section {
             display: flex;
             align-items: center;
-            height: 6.5vh;
+            height: 6.5dvh;
             text-decoration: none;
             color: #042a20;
+
+            img{
+                display: none;
+                width: 30px;
+                height: 30px;
+            }
         }
 
         .section:hover {
@@ -54,6 +59,61 @@
 
         .selected {
             color: #90967c;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+
+    .nav {
+
+        .sections {
+            z-index: 6;
+            transition: 0.5s;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 70px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-right: 0;
+
+            .section {
+                height: fit-content;
+                margin-top: calc(5dvh - 15px);
+                margin-right: 5dvw;
+
+                &.menu{
+                    display: none;
+                }
+                img {
+                    display: inline-flex;
+                }
+            }
+
+            &.clicked {
+                background-color: #042a20;
+                height: 100dvh;
+                width: 50dvw;
+
+                .section {
+                    align-self: flex-start;
+                    margin-left: 5dvw;
+
+                    &.menu{
+                        display: inline;
+                        color: white;
+                    }
+
+                    &.selected{
+                        color: #434639;
+                    }
+
+                    img {
+                        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(320deg) brightness(102%);
+                    }
+                }
+            }
         }
     }
 }
