@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Projects.scss";
 
 const Projects = () => {
@@ -9,8 +9,14 @@ const Projects = () => {
         {name: "Tiny Language Parser", description: "A python application that gets a snippet code of tiny language from the user. It scans the code to get its tokens, then it uses these tokens in parsing and drawing the syntax tree.", link: "https://github.com/AbdAllah1441/Tiny-Language-Parser"}, 
         {name: "CPU Scheduler", description: "A python application of CPU process scheduler that schedules the processes of the system using several scheduling algorithms statically and dynamically (FCFS/SJF-P/SJF-NP/Priority-P/PriorityNP/Round Robin).", link: "https://github.com/AbdAllah1441/CPU-Scheduler"}]
     
+        const [rendered, setRendered] = useState();
+
+        useEffect(() => {
+            setRendered(true);
+        }, [])
+
         return (
-        <div className = 'projects_container'>
+        <div className = {`projects_container ${rendered ? "selected" : "" }`}>
             <h1>My Projects</h1>
             <div className="content">            
                 <div className="projects">

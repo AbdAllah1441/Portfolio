@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import "./Contact.scss";
 
@@ -7,6 +7,8 @@ const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+
+    const [rendered, setRendered] = useState();
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -42,8 +44,12 @@ const Contact = () => {
         }
     };
 
+    useEffect(() => {
+        setRendered(true);
+    }, [])
+
     return (
-        <div className='contact'>
+        <div className={`contact ${rendered ? "selected" : "" }`}>
             <form ref={form} onSubmit={sendEmail}>
                 <h1>Contact Me</h1>
                 <div className="in_container">                

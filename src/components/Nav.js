@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './Nav.scss'
 import { Link } from 'react-router-dom'
 import code from "../images/code-solid.svg";
 import bars from "../images/bars-solid.svg";
+import { AppStates } from '../App';
 
 const Nav = () => {
-    const [homeSelect, setHomeSelect] = useState(true);
-    const [projectsSelect, setProjectsSelect] = useState(false);
-    const [contactSelect, setContactSelect] = useState(false);
-    const [skillsSelect, setSkillsSelect] = useState(false);
-    const [clickMenu, setClickMenu] = useState(false);
+    const {homeSelect} = useContext(AppStates);
+    const {setHomeSelect} = useContext(AppStates);
+    const {projectsSelect} = useContext(AppStates);
+    const {setProjectsSelect} = useContext(AppStates);
+    const {contactSelect} = useContext(AppStates);
+    const {setContactSelect} = useContext(AppStates);
+    const {skillsSelect} = useContext(AppStates);
+    const {setSkillsSelect} = useContext(AppStates);
+    const {clickMenu} = useContext(AppStates);
+    const {setClickMenu} = useContext(AppStates);
 
     const clicked = {
         home: [homeSelect, setHomeSelect],

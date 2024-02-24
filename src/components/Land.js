@@ -1,12 +1,14 @@
-import React from 'react'
 import avatar from "../images/profile-pic.png"
 import "./Land.scss"
 import github from "../images/github.svg"
 import linkedin from "../images/icons8-linkedin-circled.svg"
 import gmail from "../images/gmail-svgrepo-com.svg"
 import resume from "../images/Resume.pdf";
+import { useEffect, useState } from "react"
 
 const Land = () => {
+    const [rendered, setRendered] = useState();
+    
     const socials = [
         {
             icon: linkedin,
@@ -22,8 +24,12 @@ const Land = () => {
         }
     ];
 
+    useEffect(() => {
+        setRendered(true);
+    }, [])
+
     return (
-        <div className='land'>
+        <div className={`land ${rendered ? "selected" : ""}`}>
             <div className='declare'>
                 <div className='who'>
                     <div className='hello'>
@@ -31,9 +37,9 @@ const Land = () => {
                         <p>I'm <span>AbdAllah</span></p>
                         <p>Front End Engineer</p>
                         <div className='links'>
-                            {socials.map((e) => <a href={e.url}
+                            {socials.map((e) => <div className="link_container"><a href={e.url}
                                 target="_blank" rel="noreferrer">
-                                <img src={e.icon} alt='ggg' /></a>)}
+                                <img src={e.icon} alt='ggg' /></a></div> )}
                         </div>
                         <a className='cv' href={resume} download>Download CV</a>
                     </div>

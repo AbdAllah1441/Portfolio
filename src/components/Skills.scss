@@ -1,4 +1,12 @@
 .skills_container {
+    opacity: 0;
+    transition: 1.5s ease;
+    transform: translateY(-50px);
+    &.selected{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    min-height: 90dvh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     flex-direction: column;

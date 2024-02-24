@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Skills.scss"
 import react from "../images/react.svg";
 import js from "../images/js.svg";
@@ -13,10 +13,17 @@ const Skills = () => {
     const skills = [{name: "ReactJS", level: "four_p", icon: react}, {name: "JavaScript", level: "four_p", icon: js},
         {name: "HTML", level: "four", icon: html}, {name: "CSS", level: "four_p", icon: css},
         {name: "Python", level: "four_p", icon: python}, {name: "C/C++", level: "three_p", icon: c},
-        {name: "SQL", level: "three", icon: sql}, {name: "MongoDB", level: "three_p", icon: mongo}]
+        {name: "SQL", level: "three", icon: sql}, {name: "MongoDB", level: "three_p", icon: mongo}];
+
+    const [rendered, setRendered] = useState();
+
+    useEffect(() => {
+        setRendered(true);
+    }, [])
+
 
     return (
-        <div className = 'skills_container'>
+        <div className = {`skills_container ${rendered ? "selected" : "" }`}>
             <h1>My Skills</h1>
             <div className="content">            
                 <div className="skills">
