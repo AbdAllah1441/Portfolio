@@ -12,7 +12,7 @@ const Land = () => {
     const socials = [
         {
             icon: linkedin,
-            url: "https://www.linkedin.com/in/ِabdallah1441",
+            url: "https://www.linkedin.com/in/abdallah1441",
         },
         {
             icon: github,
