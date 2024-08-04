@@ -35,7 +35,7 @@ const Land = () => {
                     <div className='hello'>
                         <p>Hello,</p>
                         <p>I'm <span>AbdAllah</span></p>
-                        <p>Front End Engineer</p>
+                        <p>Software Engineer</p>
                         <div className='links'>
                             {socials.map((e) => <div className="link_container"><a href={e.url}
                                 target="_blank" rel="noreferrer">
