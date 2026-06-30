@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: 'AbdAllah Sakhr',
+  name: 'AbdAllah Mostafa',
   title: 'Frontend Developer | React & Next.js Developer',
   description:
     'Frontend Developer with 3+ years of experience building responsive and interactive web applications using React, Next.js, and TypeScript.',
-  url: 'https://abdallah-sakhr.dev',
-  email: 'abdallah.sakhr@example.com',
+  url: 'https://abdallah-mostafa.dev',
+  email: 'abdallah.mostafa@example.com',
   github: 'https://github.com/AbdAllah1441',
-  linkedin: 'https://linkedin.com/in/abdallah-sakhr',
-  cvUrl: '/cv-abdallah-sakhr.pdf',
+  linkedin: 'https://linkedin.com/in/abdallah-mostafa',
+  cvUrl: '/cv-abdallah-mostafa.pdf',
 } as const
 
 export const navLinks = [
@@ -147,7 +147,7 @@ export const experiences: Experience[] = [
 export const terminalCommands = [
   {
     command: 'whoami',
-    output: ['AbdAllah Sakhr'],
+    output: ['AbdAllah Mostafa'],
   },
   {
     command: 'stack',
