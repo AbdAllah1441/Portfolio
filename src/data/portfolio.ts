@@ -48,11 +48,11 @@ export const skillCategories = [
   },
   {
     title: 'Backend & Data',
-    skills: ['PostgreSQL', 'Prisma', 'REST APIs'],
+    skills: ['Node.js', 'Express', 'PostgreSQL','MongoDB', 'Prisma', 'REST APIs'],
   },
   {
     title: 'Tools',
-    skills: ['Git', 'Docker', 'Figma'],
+    skills: ['Git', 'Docker', 'Figma', 'Jira'],
   },
 ] as const
 

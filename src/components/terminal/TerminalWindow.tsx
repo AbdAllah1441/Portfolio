@@ -160,7 +160,7 @@ export function TerminalWindow() {
 
   return (
     <div
-      className="flex h-[28rem] w-[28rem] max-w-full flex-col overflow-hidden border border-border bg-surface"
+      className="flex h-[28rem] w-[28rem] max-w-full flex-col overflow-hidden border border-border bg-surface/80 shadow-[var(--shadow-lg)] backdrop-blur-sm glow-accent-soft"
       aria-label="Terminal preview"
       role="region"
     >

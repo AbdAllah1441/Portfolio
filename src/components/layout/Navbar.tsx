@@ -42,7 +42,9 @@ export function Navbar() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-background/90 backdrop-blur-md' : 'bg-transparent',
+        isScrolled
+          ? 'border-b border-border/60 bg-background/85 shadow-[var(--shadow-sm)] backdrop-blur-md'
+          : 'bg-transparent',
       )}
     >
       <nav
@@ -56,7 +58,7 @@ export function Navbar() {
             scrollToSection('hero')
             setIsMobileOpen(false)
           }}
-          className="font-mono text-sm font-medium text-foreground transition-colors hover:text-accent"
+          className="font-mono text-sm font-medium text-foreground transition-colors duration-300 hover:text-accent"
         >
           {siteConfig.name.split(' ')[0].toLowerCase()}_
           <span className="text-accent">dev</span>
@@ -72,7 +74,7 @@ export function Navbar() {
                   handleNavClick(link.href)
                 }}
                 className={cn(
-                  'px-3 py-2 text-sm transition-colors duration-200',
+                  'px-3 py-2 text-sm transition-colors duration-300',
                   isLinkActive(link.href)
                     ? 'text-accent'
                     : 'text-muted-foreground hover:text-foreground',

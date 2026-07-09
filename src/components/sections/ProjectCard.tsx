@@ -9,24 +9,24 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group flex flex-col overflow-hidden border border-border bg-surface transition-colors duration-300 hover:border-accent/30">
+    <article className="group surface-card surface-card-lift flex h-full flex-col overflow-hidden">
       <div
-        className="relative flex h-48 items-center justify-center bg-surface-elevated"
+        className="relative flex h-48 items-center justify-center overflow-hidden bg-surface-elevated"
         aria-hidden="true"
       >
-        <div className="flex flex-col items-center gap-2 text-muted">
+        <div className="flex flex-col items-center gap-2 text-muted transition-transform duration-500 ease-out group-hover:scale-110">
           <Layers size={32} strokeWidth={1.5} />
           <span className="font-mono text-xs">preview</span>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-50" />
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-accent">
+        <h3 className="font-display text-lg font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-accent">
           {project.title}
         </h3>
 
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
 

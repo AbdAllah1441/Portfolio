@@ -9,17 +9,24 @@ import { Contact } from '#/components/sections/Contact'
 
 export function PortfolioPage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <div className="relative">
+      <div className="ambient-bg" aria-hidden="true">
+        <div className="ambient-grid" />
+        <div className="ambient-noise" />
+      </div>
+
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </div>
   )
 }

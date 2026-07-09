@@ -18,7 +18,7 @@ export function SectionWrapper({
     <section
       id={id}
       aria-labelledby={ariaLabelledBy}
-      className={cn('scroll-mt-20 py-20 md:py-28', className)}
+      className={cn('scroll-mt-20 py-24 md:py-32', className)}
     >
       <div className="mx-auto max-w-6xl px-6">{children}</div>
     </section>

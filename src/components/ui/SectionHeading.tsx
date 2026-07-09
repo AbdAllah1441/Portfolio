@@ -22,7 +22,7 @@ export function SectionHeading({
       <p className="font-mono text-sm text-accent tracking-wide">{label}</p>
       <h2
         id={titleId}
-        className="mt-2 text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
+        className="font-display mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-[2.5rem] md:leading-tight"
       >
         {title}
       </h2>
