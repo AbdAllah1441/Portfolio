@@ -18,7 +18,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn('mb-12 md:mb-16', className)}>
+    <div className={cn(className || 'mb-12 md:mb-16')}>
       <p className="font-mono text-sm text-accent tracking-wide">{label}</p>
       <h2
         id={titleId}

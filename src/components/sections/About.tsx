@@ -13,7 +13,7 @@ export function About() {
             title="About Me"
             description="A brief overview of who I am and what I bring to the table."
             titleId="about-heading"
-            className="mb-8 md:mb-10"
+            className="mb-4 md:mb-5"
           />
 
           <p className="text-base leading-relaxed text-muted-foreground md:text-lg md:leading-8">

@@ -60,7 +60,7 @@ export function Contact() {
               title="Get In Touch"
               description="Have a project in mind or want to connect? I'd love to hear from you."
               titleId="contact-heading"
-              className="mb-8 md:mb-10"
+              className="mb-4 md:mb-5"
             />
 
             <p className="text-base leading-relaxed text-muted-foreground md:leading-8">
