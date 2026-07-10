@@ -38,6 +38,8 @@ export const cloudProps: Omit<ICloud, 'children'> = {
     tooltip: 'native',
     tooltipDelay: 0,
     wheelZoom: false,
+    // Pull the sphere in slightly so icons aren't clipped at the canvas edge
+    zoom: 0.98,
   },
 }
 
