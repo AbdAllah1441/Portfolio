@@ -11,7 +11,7 @@ export function Projects() {
         <SectionHeading
           label="// projects"
           title="Featured Projects"
-          description="A selection of projects showcasing my frontend development work."
+          description="Personal work and production projects from ElectroPi and Node Technologies."
         />
       </Reveal>
 

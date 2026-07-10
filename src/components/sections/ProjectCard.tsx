@@ -36,32 +36,38 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Button
-            as="a"
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="secondary"
-            className="text-xs"
-            aria-label={`View ${project.title} on GitHub`}
-          >
-            <Github size={16} aria-hidden="true" />
-            GitHub
-          </Button>
-          <Button
-            as="a"
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="outline"
-            className="text-xs"
-            aria-label={`View live demo of ${project.title}`}
-          >
-            <ExternalLink size={16} aria-hidden="true" />
-            Live Demo
-          </Button>
-        </div>
+        {(project.githubUrl || project.liveUrl) && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.githubUrl && (
+              <Button
+                as="a"
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                className="text-xs"
+                aria-label={`View ${project.title} on GitHub`}
+              >
+                <Github size={16} aria-hidden="true" />
+                GitHub
+              </Button>
+            )}
+            {project.liveUrl && (
+              <Button
+                as="a"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                className="text-xs"
+                aria-label={`View live demo of ${project.title}`}
+              >
+                <ExternalLink size={16} aria-hidden="true" />
+                Live Demo
+              </Button>
+            )}
+          </div>
+        )}
       </div>
     </article>
   )
