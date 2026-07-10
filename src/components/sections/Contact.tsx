@@ -106,7 +106,7 @@ export function Contact() {
                 autoComplete="name"
                 value={form.name}
                 onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                className="w-full border border-border bg-background px-4 py-2.5 text-sm text-foreground shadow-[var(--shadow-sm)] placeholder:text-muted transition-all duration-300 focus:border-accent/60 focus:shadow-[var(--shadow-glow)] focus:outline-none"
+                className="contact-field w-full border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted transition-colors duration-300"
                 placeholder="Your name"
               />
             </div>
@@ -123,7 +123,7 @@ export function Contact() {
                 autoComplete="email"
                 value={form.email}
                 onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                className="w-full border border-border bg-background px-4 py-2.5 text-sm text-foreground shadow-[var(--shadow-sm)] placeholder:text-muted transition-all duration-300 focus:border-accent/60 focus:shadow-[var(--shadow-glow)] focus:outline-none"
+                className="contact-field w-full border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted transition-colors duration-300"
                 placeholder="you@example.com"
               />
             </div>
@@ -139,7 +139,7 @@ export function Contact() {
                 rows={5}
                 value={form.message}
                 onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                className="min-h-[8rem] flex-1 resize-y border border-border bg-background px-4 py-2.5 text-sm text-foreground shadow-[var(--shadow-sm)] placeholder:text-muted transition-all duration-300 focus:border-accent/60 focus:shadow-[var(--shadow-glow)] focus:outline-none"
+                className="contact-field contact-message min-h-[8rem] flex-1 resize-none border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted transition-colors duration-300"
                 placeholder="Tell me about your project..."
               />
             </div>

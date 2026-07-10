@@ -18,12 +18,10 @@ export function Experience() {
       <ol id="experience-heading" className="relative space-y-0">
         {experiences.map((exp, index) => (
           <li key={exp.id} className="relative pl-8 pb-14 last:pb-0">
-            {index < experiences.length - 1 && (
-              <span
-                className="absolute left-[7px] top-3 h-full w-px bg-gradient-to-b from-accent/40 via-border to-border"
-                aria-hidden="true"
-              />
-            )}
+            <span
+              className="absolute bottom-0 left-[7px] top-3 w-px bg-gradient-to-b from-accent/40 via-border to-border"
+              aria-hidden="true"
+            />
 
             <span
               className="absolute left-0 top-1.5 flex h-4 w-4 items-center justify-center border-2 border-accent bg-background shadow-[0_0_12px_color-mix(in_srgb,var(--color-accent)_35%,transparent)]"

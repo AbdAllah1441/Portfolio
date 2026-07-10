@@ -48,12 +48,37 @@ export const skillCategories = [
   },
   {
     title: 'Backend & Data',
-    skills: ['Node.js', 'Express', 'PostgreSQL','MongoDB', 'Prisma', 'REST APIs'],
+    skills: [
+      'Node.js',
+      'Express',
+      'PostgreSQL',
+      'MongoDB',
+      'Prisma',
+      'REST APIs',
+    ],
   },
   {
     title: 'Tools',
-    skills: ['Git', 'Docker', 'Figma', 'Jira'],
+    skills: ['Git', 'Docker', 'Figma'],
   },
+] as const
+
+export const skillSlugs = [
+  'typescript',
+  'javascript',
+  'react',
+  'nextdotjs',
+  'html5',
+  'css3',
+  'tailwindcss',
+  'nodedotjs',
+  'express',
+  'postgresql',
+  'mongodb',
+  'prisma',
+  'git',
+  'docker',
+  'figma',
 ] as const
 
 export type Project = {

@@ -65,6 +65,12 @@ body {
   outline-offset: 2px;
 }
 
+.contact-field:focus,
+.contact-field:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
 /* Ambient background layers */
 .ambient-bg {
   position: fixed;
@@ -183,6 +189,35 @@ body {
 
 .glow-accent-soft {
   box-shadow: var(--shadow-glow);
+}
+
+/* Contact message textarea scrollbar */
+.contact-message {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) var(--color-surface);
+}
+
+.contact-message::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-message::-webkit-scrollbar-track {
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+.contact-message::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border: 2px solid var(--color-surface);
+}
+
+.contact-message::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
+}
+
+.contact-message::-webkit-scrollbar-corner {
+  background: var(--color-surface);
 }
 
 /* Scroll reveal */
