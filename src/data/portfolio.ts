@@ -71,6 +71,9 @@ export const skillSlugs = [
   'html5',
   'css3',
   'tailwindcss',
+  'reactquery',
+  'zustand',
+  'tanstack',
   'nodedotjs',
   'express',
   'postgresql',
@@ -88,6 +91,7 @@ export type Project = {
   technologies: string[]
   githubUrl?: string
   liveUrl?: string
+  imageUrl?: string
   imageAlt: string
 }
 
@@ -107,6 +111,7 @@ export const projects: Project[] = [
       'Prisma',
     ],
     liveUrl: 'https://www.electropi.ai',
+    imageUrl: '/projects/electropi.png',
     imageAlt: 'ElectroPi website and voice agent preview',
   },
   {

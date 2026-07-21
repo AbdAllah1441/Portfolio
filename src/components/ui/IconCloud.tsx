@@ -1,10 +1,19 @@
 import { useEffect, useMemo, useState } from 'react'
+import type { ReactElement } from 'react'
 
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from 'react-icon-cloud'
 import type { ICloud, SimpleIcon } from 'react-icon-cloud'
 
+import {
+  customSkillIcons,
+  fetchCustomSvgSkillIcons,
+  getCustomImageSkillIcons,
+  isCustomSkillSlug,
+} from '#/data/customSkillIcons'
+import type { CustomImageSkillIcon } from '#/data/customSkillIcons'
+
 type IconCloudProps = {
-  iconSlugs: string[]
+  iconSlugs: readonly string[]
 }
 
 export const cloudProps: Omit<ICloud, 'children'> = {
@@ -63,23 +72,62 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
   })
 }
 
+function renderImageIcon(icon: CustomImageSkillIcon): ReactElement {
+  return (
+    <a
+      key={icon.src}
+      title={icon.title}
+      style={{ cursor: 'pointer' }}
+      onClick={(e) => e.preventDefault()}
+    >
+      <img height={64} width={64} alt={icon.title} src={icon.src} />
+    </a>
+  )
+}
+
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>
 
-export function IconCloud({ iconSlugs }: IconCloudProps) {
+export function IconCloud({ iconSlugs }: Readonly<IconCloudProps>) {
   const [data, setData] = useState<IconData | null>(null)
+  const imageIcons = useMemo(
+    () => getCustomImageSkillIcons(iconSlugs.filter(isCustomSkillSlug)),
+    [iconSlugs],
+  )
 
   useEffect(() => {
     let cancelled = false
 
-    if (!iconSlugs || iconSlugs.length === 0) {
+    if (iconSlugs.length === 0) {
       setData(null)
       return
     }
 
-    fetchSimpleIcons({ slugs: iconSlugs })
-      .then((result) => {
+    const simpleIconSlugs = iconSlugs.filter((slug) => !isCustomSkillSlug(slug))
+    const customSvgSlugs = iconSlugs.filter((slug) => {
+      if (!isCustomSkillSlug(slug)) {
+        return false
+      }
+
+      return customSkillIcons[slug].type === 'svg'
+    })
+
+    Promise.all([
+      simpleIconSlugs.length > 0
+        ? fetchSimpleIcons({ slugs: [...simpleIconSlugs] })
+        : Promise.resolve({ simpleIcons: {}, allIcon: {} }),
+      customSvgSlugs.length > 0
+        ? fetchCustomSvgSkillIcons(customSvgSlugs)
+        : Promise.resolve({}),
+    ])
+      .then(([simpleIcons, customIcons]) => {
         if (!cancelled) {
-          setData(result)
+          setData({
+            ...simpleIcons,
+            simpleIcons: {
+              ...simpleIcons.simpleIcons,
+              ...customIcons,
+            },
+          })
         }
       })
       .catch(() => {
@@ -94,18 +142,25 @@ export function IconCloud({ iconSlugs }: IconCloudProps) {
   }, [iconSlugs])
 
   const renderedIcons = useMemo(() => {
-    if (!data?.simpleIcons) {
+    if (!data?.simpleIcons && imageIcons.length === 0) {
       return null
     }
 
-    const icons = Object.values(data.simpleIcons)
+    const pathIcons = data?.simpleIcons
+      ? Object.values(data.simpleIcons).map((icon) =>
+          renderCustomIcon(icon, 'dark'),
+        )
+      : []
+
+    const renderedImageIcons = imageIcons.map(renderImageIcon)
+    const icons = [...pathIcons, ...renderedImageIcons]
 
     if (icons.length === 0) {
       return null
     }
 
-    return icons.map((icon) => renderCustomIcon(icon, 'dark'))
-  }, [data])
+    return icons
+  }, [data, imageIcons])
 
   if (!renderedIcons) {
     return (
